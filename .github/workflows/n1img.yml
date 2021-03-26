@@ -44,7 +44,7 @@ jobs:
       
     - name: Initialization environment
       run: |     
-        version=$(curl -s "https://api.github.com/repos/mingxiaoyu/N1Openwrt/releases/latest" | awk -F '"' '/tag_name/{print $4}')
+        version=$(curl -s "https://api.github.com/repos/8688Add/Lede-N1/releases/latest" | awk -F '"' '/tag_name/{print $4}')
         
         echo "version=$version"  >> $GITHUB_ENV
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")"  >> $GITHUB_ENV
@@ -70,7 +70,7 @@ jobs:
       run: |
         cd /opt/dl
         
-        wget  https://github.com/mingxiaoyu/N1Openwrt/releases/download/$version/openwrt-armvirt-64-default-rootfs.tar.gz
+        wget  https://github.com/8688Add/Lede-N1/releases/download/armv8开发版/openwrt-armvirt-64-default-rootfs.tar.gz
         wget ${FLIPPY_URL}
         
     - name: Check Files
@@ -110,7 +110,7 @@ jobs:
         xz -z $RELEASE_NAME
         
         echo "::set-output name=status::success"
-    - name: build Personal N1(我个人用的胖路由配置)
+    - name: build Personal N1
       if:  env.FLIPPY_NAME == '55' || contains(env.FLIPPY_NAME, '55')
       run: |
         [ -e openwrtfiles ] && mv openwrtfiles /opt/openwrt/files
