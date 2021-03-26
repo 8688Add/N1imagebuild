@@ -139,7 +139,7 @@ jobs:
           55+o 在线升级方法：
              1. 上传 N1_55_Openwrt.img 到/mnt/mmcblk2p4
              2. cd /mnt/mmcblk2p4
-             3. 升级脚本下载 https://raw.githubusercontent.com/mingxiaoyu/N1imagebuilder/main/55/opt/openwrt/files/update-amlogic-openwrt.sh
+             3. 升级脚本下载 https://raw.githubusercontent.com/8688Add/N1imagebuilder/main/55/opt/openwrt/files/update-amlogic-openwrt.sh
              4. chmod +x update-amlogic-openwrt.sh
              5. ./update-amlogic-openwrt.sh N1_55_Openwrt.img
         artifacts: "/opt/openwrt/tmp/*.xz"
